@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <link rel="stylesheet" href="src/assets/scss/main.scss">
+  </head>
+  <body>
+    <div class="chat-container">
+      <aside class="chat-sidebar">
+          <header class="chat-sidebar__header">
+              <form class="chat-sidebar__search" role="search">
+                  <input type="text" class="chat-sidebar__search-input" placeholder="Search chats...">
+              </form>
+          </header>
+
+          <nav class="chat-sidebar__nav" aria-label="Chat List">
+              <ul class="chat-list">
+                  <li class="chat-list__item chat-list__item--active">
+                      <span class="chat-list__item-name">Chat 1</span>
+                      <span class="chat-list__item-time">19:48</span>
+                  </li>
+                  <li class="chat-list__item">
+                      <span class="chat-list__item-name">Chat 2</span>
+                      <span class="chat-list__item-time">18:30</span>
+                  </li>
+              </ul>
+          </nav>
+      </aside>
+      <main class="chat-main">
+          <header class="chat-main__header">
+              <h1 class="chat-main__title">Chat 1</h1>
+              <img src="src/assets/icons/search-icon.svg" alt="Icon">
+              <img src="src/assets/icons/call-icon.svg" alt="Icon">
+              <img src="src/assets/icons/more-icon.svg" alt="Icon">
+          </header>
+
+          <section class="chat-messages" aria-live="polite">
+              <article class="message message--left">
+                  <p>Hello!</p>
+                  <time datetime="2023-09-20T18:12">18:12</time>
+              </article>
+              <article class="message message--right">
+                  <p>Hi there!</p>
+                  <time datetime="2023-09-20T18:16">18:16</time>
+              </article>
+          </section>
+
+          <footer class="chat-main__footer">
+              <form class="chat-input" role="form">
+                  <img src="src/assets/icons/emoji-icon.svg" alt="Icon">
+                  <input type="text" class="chat-input__field" placeholder="Type a message...">
+                  <button class="chat-input__button" type="submit">Send</button>
+                  <img src="src/assets/icons/send-icon.svg" alt="Icon">
+              </form>
+          </footer>
+      </main>
+    
+  </div>
+  </body>
+</html>
