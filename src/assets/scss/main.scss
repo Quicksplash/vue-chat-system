@@ -1,14 +1,26 @@
 @import "base/normalize";
+@import "utils/variables";
+@import "layout/header";
+@import "components/message";
 
-// Переменные для цветов и прочих констант
-$primary-color: #112a3b;
-$secondary-color: #93f3bb;
-$background-color: #921a1a;
-$message-left-color: #2b92ac;
-$message-right-color: #633935;
+@font-face {
+  font-family: "Inter", sans-serif;
+  src: url("@/fonts/Inter-Regular.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter", sans-serif;
+  src: url("@/fonts/Inter-Semi-Bold.ttf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
 
 body {
   background-color: $background-color;
+  font-family: $font-family;
+  font-size: 16px;
 }
 
 // Основной контейнер чата
@@ -19,8 +31,9 @@ body {
 
 // Сайдбар
 .chat-sidebar {
-  width: 25%;
-  background-color: $background-color;
+  // width: 25%;
+  flex: 0 0 25%;
+  background-color: $primary-color;
   border-right: 1px solid #ddd;
   display: flex;
   flex-direction: column;
@@ -73,87 +86,6 @@ body {
       &-time {
         font-size: 0.8rem;
       }
-    }
-  }
-}
-
-// Основная часть чата
-.chat-main {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-
-  &__header {
-    background-color: $primary-color;
-    color: white;
-    padding: 15px;
-    font-size: 1.5rem;
-    text-align: center;
-  }
-
-  &__footer {
-    padding: 10px;
-    background-color: white;
-    border-top: 1px solid #ddd;
-    display: flex;
-  }
-
-  .chat-input {
-    display: flex;
-    width: 100%;
-
-    &__field {
-      flex-grow: 1;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-    }
-
-    &__button {
-      padding: 10px 20px;
-      background-color: $primary-color;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      margin-left: 10px;
-      cursor: pointer;
-    }
-  }
-}
-
-// Сообщения
-.chat-messages {
-  flex-grow: 1;
-  padding: 15px;
-  background-color: $background-color;
-  overflow-y: auto;
-
-  .message {
-    max-width: 60%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 10px;
-
-    &--left {
-      background-color: $message-left-color;
-      align-self: flex-start;
-    }
-
-    &--right {
-      background-color: $message-right-color;
-      align-self: flex-end;
-      color: white;
-    }
-
-    p {
-      margin: 0;
-    }
-
-    time {
-      font-size: 0.8rem;
-      color: gray;
-      display: block;
-      margin-top: 5px;
     }
   }
 }
