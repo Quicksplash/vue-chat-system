@@ -1,0 +1,68 @@
+.chat-messages {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0 32px;
+  background-color: $background-color;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+
+  &__spacer {
+    flex-grow: 1;
+  }
+  &__date {
+    margin: 0 auto;
+    padding: 4px 12px;
+    background-color: rgb(61, 112, 184, 60%);
+    color: $primary-color;
+    border-radius: 12px;
+  }
+  .message {
+    max-width: 60%;
+    padding: 4px 12px;
+    margin: 16px 0;
+    border-radius: 12px;
+    word-wrap: break-word;
+    word-break: break-word;
+
+    &__status {
+      display: flex;
+      justify-content: end;
+      gap: 4px;
+      margin-top: 5px;
+    }
+
+    &--left {
+      background-color: $message-left-color;
+      align-self: flex-start;
+
+      time {
+        color: $name-color; // Цвет для времени в правом сообщении
+      }
+      svg {
+        fill: $name-color;
+      }
+    }
+
+    &--right {
+      background-color: $message-right-color;
+      align-self: flex-end;
+
+      time {
+        color: $primary-color; // Цвет для времени в правом сообщении
+      }
+
+      svg {
+        fill: $primary-color;
+      }
+    }
+
+    p {
+      margin: 0;
+    }
+
+    time {
+      font-size: 0.8rem;
+    }
+  }
+}
