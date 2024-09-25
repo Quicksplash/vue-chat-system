@@ -1,10 +1,11 @@
 <template>
-	<span class="chat-main__recipient-name">{{ props.name }}</span>
+	<span>{{ props.name }}</span>
 </template>
 
 <script setup lang="ts">
 const props = defineProps<{
 	name: string;
+	className: string;
 }>();
 </script>
 
