@@ -16,3 +16,14 @@
 	height: $size;
 	border-radius: 50%;
 }
+
+@mixin input-base {
+	border: none;
+	outline: none;
+	flex-grow: 1;
+	background-color: transparent;
+
+	&::placeholder {
+		color: #999;
+	}
+}
