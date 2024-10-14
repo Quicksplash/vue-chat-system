@@ -5,6 +5,7 @@ import { fetchChatList } from '@/services/api';
 
 export const useChatStore = defineStore('chat', () => {
 	const chatList = ref<Chat[]>([]);
+	const isCollapsed = ref<boolean>(false);
 
 	const getChatList = async () => {
 		// loading.value = true;
@@ -17,5 +18,9 @@ export const useChatStore = defineStore('chat', () => {
 			// loading.value = false;
 		}
 	};
-	return { chatList, getChatList };
+
+	const toggleSidebar = () => {
+		isCollapsed.value = !isCollapsed.value;
+	};
+	return { chatList, isCollapsed, getChatList, toggleSidebar };
 });

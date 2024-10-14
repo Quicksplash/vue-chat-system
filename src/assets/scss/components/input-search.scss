@@ -1,7 +1,7 @@
 @import '../utils/mixins.scss';
 
 .chat-sidebar__search {
-	flex-grow: 1;
+	flex: 1;
 	display: flex;
 	gap: 16px;
 	padding: 10px 16px;

@@ -15,7 +15,7 @@ import SearchIcon from '@/components/atoms/SearchIcon.vue';
 import TheInput from '@/components/atoms/TheInput.vue';
 import { ref } from 'vue';
 
-const searchMessage = ref('');
+const searchMessage = ref<string>('');
 </script>
 
 <style scoped></style>

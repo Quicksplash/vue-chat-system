@@ -1,30 +1,32 @@
-@import "base/normalize";
-@import "utils/variables";
-@import "layout/chat-main";
-@import "layout/chat-asside";
+@import 'base/normalize';
+@import 'utils/variables';
+@import 'layout/chat-main';
+@import 'layout/chat-asside';
+@import 'utils/animation';
+@import 'utils/media';
 
 @font-face {
-  font-family: "Inter", sans-serif;
-  src: url("@/fonts/Inter-Regular.ttf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
+	font-family: 'Inter', sans-serif;
+	src: url('@/fonts/Inter-Regular.ttf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
 }
 
 @font-face {
-  font-family: "Inter", sans-serif;
-  src: url("@/fonts/Inter-Semi-Bold.ttf") format("opentype");
-  font-weight: bold;
-  font-style: normal;
+	font-family: 'Inter', sans-serif;
+	src: url('@/fonts/Inter-Semi-Bold.ttf') format('opentype');
+	font-weight: bold;
+	font-style: normal;
 }
 
 body {
-  background-color: $background-color;
-  font-family: $font-family;
-  font-size: 16px;
+	background-color: $background-color;
+	font-family: $font-family;
+	font-size: 16px;
 }
 
 // Основной контейнер чата
 .chat-container {
-  display: flex;
-  height: 100vh;
+	display: flex;
+	height: 100vh;
 }

@@ -1,0 +1,11 @@
+.sidebar-transition-enter-active,
+.sidebar-transition-leave-active {
+	transition:
+		opacity 0.3s,
+		transform 0.3s;
+}
+.sidebar-transition-enter-from,
+.sidebar-transition-leave-to {
+	opacity: 0;
+	transform: translateX(-10px);
+}

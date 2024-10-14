@@ -1,0 +1,12 @@
+@import '../layout/chat-asside';
+@import '../components/input-search';
+
+@media (max-width: 768px) {
+	.chat-sidebar {
+		flex: 0;
+	}
+	.chat-list__item-content,
+	.chat-sidebar__search {
+		display: none;
+	}
+}

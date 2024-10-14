@@ -1,5 +1,5 @@
 <template>
-	<span>{{ props.name }}</span>
+	<span :class="props.className">{{ props.name }}</span>
 </template>
 
 <script setup lang="ts">

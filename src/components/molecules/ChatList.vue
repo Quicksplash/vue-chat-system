@@ -8,6 +8,7 @@
 					:time="chat.time"
 					:preview="chat.preview"
 					:count="chat.count"
+					:is-collapsed="isCollapsed"
 				/>
 			</template>
 		</ul>
@@ -22,7 +23,7 @@ import ChatListItem from '@/components/molecules/ChatListItem.vue';
 
 const chatStore = useChatStore();
 
-const { chatList } = storeToRefs(chatStore);
+const { chatList, isCollapsed } = storeToRefs(chatStore);
 
 onMounted(async () => {
 	await chatStore.getChatList();
