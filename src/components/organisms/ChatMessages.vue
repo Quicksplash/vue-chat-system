@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import ChatMessage from '@/components/organisms/ChatMessage.vue';
+import ChatMessage from '@/components/molecules/ChatMessage.vue';
 </script>
 
 <style scoped></style>

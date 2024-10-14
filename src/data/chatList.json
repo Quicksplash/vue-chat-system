@@ -1,0 +1,26 @@
+[
+	{
+		"id": 1,
+		"avatar": "src/assets/images/Avatar-2.png",
+		"name": "Чат 1",
+		"time": "19:48",
+		"preview": "Привет, как дела!",
+		"count": 1
+	},
+	{
+		"id": 2,
+		"avatar": "src/assets/images/Avatar-3.png",
+		"name": "Чат 2",
+		"time": "20:15",
+		"preview": "Как насчет встречи завтра?",
+		"count": 0
+	},
+	{
+		"id": 3,
+		"avatar": "src/assets/images/Avatar-4.png",
+		"name": "Чат 3",
+		"time": "18:30",
+		"preview": "Не забудь про отчет",
+		"count": 2
+	}
+]
