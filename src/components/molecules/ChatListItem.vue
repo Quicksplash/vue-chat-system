@@ -1,5 +1,5 @@
 <template>
-	<li :class="chatItemClasses">
+	<li :class="chatItemClasses" @click="chatStore.setActiveChat(props.id)">
 		<TheAvatar :src="props.avatar" />
 		<Transition name="sidebar-transition">
 			<div v-show="!props.isCollapsed" class="chat-list__item-content">
@@ -17,20 +17,24 @@
 </template>
 
 <script setup lang="ts">
-import type { ChatData } from '@/types/chat';
+import type { Chat } from '@/types/chat';
 import TheAvatar from '@/components/atoms/TheAvatar.vue';
 import ChatName from '@/components/atoms/ChatName.vue';
+import { useChatStore } from '@/stores/chat';
 import { computed } from 'vue';
+import { storeToRefs } from 'pinia';
 
 const props = defineProps<
-	ChatData & {
-		isActive?: boolean;
+	Chat & {
 		isCollapsed?: boolean;
 	}
 >();
+const chatStore = useChatStore();
+
+const { activeChatId } = storeToRefs(chatStore);
 
 const chatItemClasses = computed(() => {
-	return ['chat-list__item', { 'chat-list__item--active': props.isActive }];
+	return ['chat-list__item', { 'chat-list__item--active': props.id === activeChatId.value }];
 });
 </script>
 

@@ -3,6 +3,7 @@
 		<ul class="chat-list">
 			<template v-for="chat in chatList" :key="chat.id">
 				<ChatListItem
+					:id="chat.id"
 					:avatar="chat.avatar"
 					:name="chat.name"
 					:time="chat.time"

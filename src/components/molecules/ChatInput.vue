@@ -4,9 +4,9 @@
 			<EmojiIcon />
 		</TheButton>
 		<TheInput
+			v-model:model-value="message"
 			class-name="chat-input__field"
 			name=""
-			v-model:modelValue="message"
 			placeholder="Напишите сообщение"
 		/>
 		<TheButton modifier="send">

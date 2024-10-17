@@ -11,6 +11,12 @@
 		background-color: #f0f4f8;
 	}
 
+	@media (hover: hover) and (pointer: fine) {
+		&:hover {
+			background-color: #f9fafb; /* Цвет при наведении */
+		}
+	}
+
 	img {
 		@include avatar(48px);
 	}

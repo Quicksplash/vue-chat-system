@@ -2,9 +2,9 @@
 	<form class="chat-sidebar__search" role="search">
 		<SearchIcon />
 		<TheInput
+			v-model:model-value="searchMessage"
 			class-name="chat-sidebar__search-input"
 			name="search"
-			v-model:modelValue="searchMessage"
 			placeholder="Поиск"
 		/>
 	</form>
