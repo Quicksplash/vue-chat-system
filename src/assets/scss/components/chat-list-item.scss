@@ -1,65 +1,69 @@
-@import "../utils/mixins.scss";
+@import '../utils/mixins.scss';
 
 .chat-list__item {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 12px 16px;
-  cursor: pointer;
-  border-bottom: 1px solid #eaeaea;
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	padding: 12px 16px;
+	cursor: pointer;
 
-  &--active {
-    background-color: #f0f4f8;
-  }
+	&--active {
+		background-color: #f0f4f8;
+	}
 
-  // img {
-  //   width: 40px;
-  //   height: 40px;
-  // }
+	@media (hover: hover) and (pointer: fine) {
+		&:hover {
+			background-color: #f9fafb; /* Цвет при наведении */
+		}
+	}
 
-  &-content {
-    flex: 1;
-  }
+	img {
+		@include avatar(48px);
+	}
 
-  &-header,
-  &-message {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-  }
+	&-content {
+		flex: 1;
+	}
 
-  &-header {
-    margin-bottom: 4px;
-  }
+	&-header,
+	&-message {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		align-items: center;
+	}
 
-  &-name,
-  &-preview {
-    @include text-ellipsis;
-  }
+	&-header {
+		margin-bottom: 4px;
+	}
 
-  &-name {
-    font-weight: bold;
-  }
+	&-name,
+	&-preview {
+		@include text-ellipsis;
+	}
 
-  &-time {
-    font-size: 12px;
-    color: #707991;
-  }
+	&-name {
+		font-weight: bold;
+	}
 
-  &-preview {
-    font-size: 14px;
-    color: #707991;
-  }
+	&-time {
+		font-size: 12px;
+		color: #707991;
+	}
 
-  &-count {
-    @include flex-center();
-    min-width: 16px;
-    min-height: 16px;
-    line-height: 16px;
-    background-color: #28d76f;
-    color: $primary-color;
-    font-size: 12px;
-    border-radius: 50%;
-    padding: 2px;
-  }
+	&-preview {
+		font-size: 14px;
+		color: #707991;
+	}
+
+	&-count {
+		@include flex-center();
+		min-width: 16px;
+		min-height: 16px;
+		line-height: 16px;
+		background-color: #28d76f;
+		color: $primary-color;
+		font-size: 12px;
+		border-radius: 50%;
+		padding: 2px;
+	}
 }

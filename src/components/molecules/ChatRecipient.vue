@@ -2,7 +2,7 @@
 	<div class="chat-main__recipient">
 		<TheAvatar src="src/assets/images/avatar-main.png" />
 		<div class="chat-main__recipient-info">
-			<ChatName name="Чат 1" />
+			<ChatName name="Чат 1" class-name="chat-main__recipient-name" />
 			<UserStatus status="Был в сети вчера" />
 		</div>
 	</div>

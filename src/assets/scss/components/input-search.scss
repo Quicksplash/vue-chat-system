@@ -1,18 +1,20 @@
-.chat-sidebar__search {
-  flex-grow: 1;
-  display: flex;
-  gap: 16px;
-  padding: 10px 16px;
-  background-color: #f4f4f4;
-  border-radius: 22px;
+@import '../utils/mixins.scss';
 
-  svg {
-    flex-shrink: 0;
-  }
-  &-input {
-    width: 100%;
-    border: none;
-    outline: none;
-    background-color: transparent;
-  }
+.chat-sidebar__search {
+	flex: 1;
+	display: flex;
+	gap: 16px;
+	padding: 10px 16px;
+	background-color: #f4f4f4;
+	border-radius: 22px;
+
+	svg {
+		flex-shrink: 0;
+	}
+	&-input {
+		width: 100%;
+		border: none;
+		outline: none;
+		background-color: transparent;
+	}
 }
