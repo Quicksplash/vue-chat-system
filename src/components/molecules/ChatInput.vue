@@ -1,6 +1,6 @@
 <template>
 	<form class="chat-input" role="form" @submit.prevent="sendMessage">
-		<TheButton modifier="send">
+		<TheButton type="button" modifier="send" @click="toggleEmoji">
 			<EmojiIcon />
 		</TheButton>
 		<TheInput
@@ -20,13 +20,23 @@ import EmojiIcon from '@/components/atoms/EmojiIcon.vue';
 import SendIcon from '@/components/atoms/SendIcon.vue';
 import TheButton from '@/components/atoms/TheButton.vue';
 import TheInput from '@/components/atoms/TheInput.vue';
+import { useMessageStore } from '@/stores/messages';
 import { ref } from 'vue';
 
-const message = ref('');
+const message = ref<string>('');
 
-const sendMessage = () => {};
+const messageStore = useMessageStore();
 
-const toggleEmoji = () => {};
+const sendMessage = () => {
+	message.value.trim();
+	const alignment = Math.random() > 0.5 ? 'left' : 'right';
+	messageStore.addMessage(message.value, alignment);
+	message.value = '';
+};
+
+const toggleEmoji = () => {
+	console.log('тест1');
+};
 </script>
 
 <style scoped></style>
