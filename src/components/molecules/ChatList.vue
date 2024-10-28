@@ -18,7 +18,6 @@
 
 <script setup lang="ts">
 import { useChatStore } from '@/stores/chat';
-import { onMounted } from 'vue';
 import { storeToRefs } from 'pinia';
 import ChatListItem from '@/components/molecules/ChatListItem.vue';
 
@@ -26,9 +25,7 @@ const chatStore = useChatStore();
 
 const { chatList, isCollapsed } = storeToRefs(chatStore);
 
-onMounted(async () => {
-	await chatStore.getChatList();
-});
+await chatStore.getChatList();
 </script>
 
 <style scoped></style>

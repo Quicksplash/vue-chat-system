@@ -14,7 +14,7 @@ export const useChatStore = defineStore('chat', () => {
 			const data = await fetchChatList();
 			chatList.value = data;
 		} catch (err) {
-			// error.value = 'Failed to load chat list';
+			console.log('Failed to load chat list');
 		} finally {
 			// loading.value = false;
 		}

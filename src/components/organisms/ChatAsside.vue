@@ -1,15 +1,23 @@
 <template>
 	<aside :class="['chat-sidebar', { 'chat-sidebar--collapsed': isCollapsed }]">
 		<AssideHeader />
-		<ChatList />
+		<Suspense>
+			<template #default>
+				<ChatList />
+			</template>
+			<template #fallback>
+				<ThePreloader />
+			</template>
+		</Suspense>
 	</aside>
 </template>
 
 <script setup lang="ts">
-import AssideHeader from '@/components/molecules/AssideHeader.vue';
-import ChatList from '@/components/molecules/ChatList.vue';
-import { useChatStore } from '@/stores/chat';
 import { storeToRefs } from 'pinia';
+import { useChatStore } from '@/stores/chat';
+import AssideHeader from '@/components/molecules/AssideHeader.vue';
+import ThePreloader from '@/components/atoms/ThePreloader.vue';
+import ChatList from '@/components/molecules/ChatList.vue';
 
 const chatStore = useChatStore();
 
