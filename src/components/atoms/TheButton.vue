@@ -1,5 +1,5 @@
 <template>
-	<button :class="buttonClass" type="button" @click="() => handleClick">
+	<button :class="buttonClass" :type="props.type" @click="() => handleClick">
 		<slot></slot>
 	</button>
 </template>
@@ -9,10 +9,12 @@ import { computed } from 'vue';
 
 const props = withDefaults(
 	defineProps<{
+		type?: HTMLButtonElement['type'];
 		modifier?: 'send' | 'actions';
 	}>(),
 	{
 		modifier: 'actions',
+		type: 'submit',
 	},
 );
 

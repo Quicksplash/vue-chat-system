@@ -7,4 +7,11 @@ export interface Chat {
 	count: number;
 }
 
+export interface Message {
+	id: number;
+	content: string;
+	alignment: 'left' | 'right';
+	time: string;
+}
+
 export type ChatData = Omit<Chat, 'id'>;
