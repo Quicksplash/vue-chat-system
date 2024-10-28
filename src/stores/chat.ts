@@ -28,5 +28,19 @@ export const useChatStore = defineStore('chat', () => {
 		activeChatId.value = id;
 	};
 
-	return { chatList, activeChatId, isCollapsed, getChatList, toggleSidebar, setActiveChat };
+	const updateChatPreview = (previewText: string) => {
+		if (activeChatId.value !== null) {
+			chatList.value[activeChatId.value - 1].preview = previewText;
+		}
+	};
+
+	return {
+		chatList,
+		activeChatId,
+		isCollapsed,
+		getChatList,
+		toggleSidebar,
+		setActiveChat,
+		updateChatPreview,
+	};
 });

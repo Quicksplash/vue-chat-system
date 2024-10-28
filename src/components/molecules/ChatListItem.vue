@@ -1,5 +1,5 @@
 <template>
-	<li :class="chatItemClasses" @click="chatStore.setActiveChat(props.id)">
+	<li :class="chatItemClasses" @click="handleChatClick()">
 		<TheAvatar :src="props.avatar" />
 		<Transition name="sidebar-transition">
 			<div v-show="!props.isCollapsed" class="chat-list__item-content">
@@ -23,6 +23,7 @@ import ChatName from '@/components/atoms/ChatName.vue';
 import { useChatStore } from '@/stores/chat';
 import { computed } from 'vue';
 import { storeToRefs } from 'pinia';
+import { useMessageStore } from '@/stores/messages';
 
 const props = defineProps<
 	Chat & {
@@ -30,12 +31,20 @@ const props = defineProps<
 	}
 >();
 const chatStore = useChatStore();
+const messageStore = useMessageStore();
 
 const { activeChatId } = storeToRefs(chatStore);
 
 const chatItemClasses = computed(() => {
 	return ['chat-list__item', { 'chat-list__item--active': props.id === activeChatId.value }];
 });
+
+const handleChatClick = () => {
+	if (props.id !== activeChatId.value) {
+		messageStore.clearMessages();
+		chatStore.setActiveChat(props.id);
+	}
+};
 </script>
 
 <style scoped></style>

@@ -1,8 +1,8 @@
 <template>
 	<div class="chat-main__recipient">
-		<TheAvatar src="src/assets/images/avatar-main.png" />
+		<TheAvatar :src="props.avatar" />
 		<div class="chat-main__recipient-info">
-			<ChatName name="Чат 1" class-name="chat-main__recipient-name" />
+			<ChatName :name="props.name" class-name="chat-main__recipient-name" />
 			<UserStatus status="Был в сети вчера" />
 		</div>
 	</div>
@@ -12,6 +12,11 @@
 import TheAvatar from '@/components/atoms/TheAvatar.vue';
 import ChatName from '@/components/atoms/ChatName.vue';
 import UserStatus from '@/components/atoms/UserStatus.vue';
+
+const props = defineProps<{
+	avatar: string;
+	name: string;
+}>();
 </script>
 
 <style scoped></style>
