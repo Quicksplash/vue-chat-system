@@ -7,11 +7,11 @@
 
 <script setup lang="ts">
 import type { Chat } from '@/types/chat';
-import ChatRecipient from '@/components/molecules/ChatRecipient.vue';
-import ChatAction from '@/components/molecules/ChatAction.vue';
 import { computed } from 'vue';
 import { useChatStore } from '@/stores/chat';
 import { storeToRefs } from 'pinia';
+import ChatRecipient from '@/components/molecules/ChatRecipient.vue';
+import ChatAction from '@/components/molecules/ChatAction.vue';
 
 const chatStore = useChatStore();
 const { activeChatId, chatList } = storeToRefs(chatStore);

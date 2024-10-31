@@ -1,14 +1,14 @@
 <template>
 	<LayoutTemplate>
 		<ChatAsside></ChatAsside>
-		<TheMain></TheMain>
+		<ChatMain></ChatMain>
 	</LayoutTemplate>
 </template>
 
 <script setup lang="ts">
 import LayoutTemplate from '@/components/templates/LayoutTemplate.vue';
 import ChatAsside from '@/components/organisms/ChatAsside.vue';
-import TheMain from '@/components/organisms/TheMain.vue';
+import ChatMain from '@/components/organisms/ChatMain.vue';
 </script>
 
 <style scoped></style>

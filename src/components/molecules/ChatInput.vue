@@ -1,7 +1,7 @@
 <template>
 	<form class="chat-input" role="form" @submit.prevent="sendMessage">
 		<TheButton type="button" modifier="send" @click="toggleEmoji">
-			<EmojiIcon />
+			<IconEmoji />
 		</TheButton>
 		<TheInput
 			v-model:model-value="message"
@@ -10,18 +10,18 @@
 			placeholder="Напишите сообщение"
 		/>
 		<TheButton modifier="send">
-			<SendIcon />
+			<IconSend />
 		</TheButton>
 	</form>
 </template>
 
 <script setup lang="ts">
-import EmojiIcon from '@/components/atoms/EmojiIcon.vue';
-import SendIcon from '@/components/atoms/SendIcon.vue';
-import TheButton from '@/components/atoms/TheButton.vue';
-import TheInput from '@/components/atoms/TheInput.vue';
 import { useMessageStore } from '@/stores/messages';
 import { ref } from 'vue';
+import TheButton from '@/components/atoms/TheButton.vue';
+import IconEmoji from '@/assets/icons/emoji-icon.svg';
+import TheInput from '@/components/atoms/TheInput.vue';
+import IconSend from '@/assets/icons/send-icon.svg';
 
 const message = ref<string>('');
 

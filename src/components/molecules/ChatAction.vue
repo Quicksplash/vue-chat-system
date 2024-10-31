@@ -1,22 +1,22 @@
 <template>
 	<div class="chat-main__actions">
 		<TheButton @click="onSearchClick">
-			<SearchIcon />
+			<IconSearch />
 		</TheButton>
 		<TheButton @click="onCallClick">
-			<CallIcon />
+			<IconCall />
 		</TheButton>
 		<TheButton @click="onMoreOptionsClick">
-			<MoreIcon />
+			<IconMore />
 		</TheButton>
 	</div>
 </template>
 
 <script setup lang="ts">
 import TheButton from '@/components/atoms/TheButton.vue';
-import SearchIcon from '@/components/atoms/SearchIcon.vue';
-import CallIcon from '@/components/atoms/CallIcon.vue';
-import MoreIcon from '@/components/atoms/MoreIcon.vue';
+import IconSearch from '@/assets/icons/search-icon.svg';
+import IconCall from '@/assets/icons/call-icon.svg';
+import IconMore from '@/assets/icons/more-icon.svg';
 
 const onSearchClick = () => {
 	console.log('Search button clicked');
