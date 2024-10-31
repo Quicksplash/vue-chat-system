@@ -1,6 +1,6 @@
 <template>
 	<main class="chat-main">
-		<MainHeader />
+		<ChatMainHeader />
 		<ChatMessages />
 		<ChatFooter />
 		<slot></slot>
@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import MainHeader from '@/components/molecules/MainHeader.vue';
+import ChatMainHeader from '@/components/molecules/ChatMainHeader.vue';
 import ChatMessages from '@/components/organisms/ChatMessages.vue';
 import ChatFooter from '@/components/organisms/ChatFooter.vue';
 </script>
